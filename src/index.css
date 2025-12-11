@@ -57,3 +57,34 @@ body {
   background: #334155;
   border-radius: 4px;
 }
+
+/* Hide scrollbar for horizontal scroll containers */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  overflow: hidden;
+  /* Prevent native scrolling */
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  /* Prevent native scrolling */
+}
+
+/* Mobile text selection */
+@media (max-width: 768px) {
+  body {
+    -webkit-tap-highlight-color: transparent;
+  }
+}

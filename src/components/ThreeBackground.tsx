@@ -70,7 +70,7 @@ export default function ThreeBackground() {
             size: 0.15,
             color: 0xffffff,
             transparent: true,
-            opacity: 0.6,
+            opacity: 0.8,
             blending: THREE.AdditiveBlending
         });
         const starSystem = new THREE.Points(starGeo, starMat);
@@ -150,7 +150,7 @@ export default function ThreeBackground() {
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
                 ctx.shadowColor = color;
-                ctx.shadowBlur = 15; // Glow effect
+                ctx.shadowBlur = 25; // Enhanced Glow effect
                 ctx.fillText(text, 128, 64);
             }
             return new THREE.CanvasTexture(canvas);

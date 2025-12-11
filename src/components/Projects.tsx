@@ -82,7 +82,7 @@ export default function Projects() {
                             href={project.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="project-card flex-shrink-0 w-[85vw] md:w-[350px] lg:w-[380px] h-[450px] snap-center rounded-[2rem] relative overflow-hidden border border-white/10 bg-[#050505] cursor-pointer hover:border-white/20 transition-all duration-500 first:ml-6 md:first:ml-0 last:mr-6 md:last:mr-0 group"
+                            className="project-card flex-shrink-0 w-[80vw] md:w-[320px] lg:w-[350px] h-[400px] snap-center rounded-[2rem] relative overflow-hidden border border-white/10 bg-[#050505] cursor-pointer hover:border-white/20 transition-all duration-500 first:ml-6 md:first:ml-0 last:mr-6 md:last:mr-0 group"
                         >
                             {/* Background Image with Zoom Effect */}
                             <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">

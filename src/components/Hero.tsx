@@ -21,10 +21,10 @@ export default function Hero() {
     }, []);
 
     return (
-        <section ref={heroRef} className="min-h-screen flex items-center justify-center pt-20 px-6 relative z-10">
+        <section ref={heroRef} className="min-h-screen flex items-center justify-center pt-16 sm:pt-20 px-4 sm:px-6 relative z-10">
             <div className="max-w-6xl mx-auto text-center">
 
-                <h1 className="text-7xl md:text-8xl font-semibold tracking-tighter leading-[0.9] mb-8 fade-in-up text-white drop-shadow-2xl">
+                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[0.9] mb-6 sm:mb-8 fade-in-up text-white drop-shadow-2xl">
                     BUILD.<br />
                     AUTOMATE.<br />
                     <span className="bg-gradient-to-r from-rose-500 to-rose-300 bg-clip-text text-transparent">
@@ -33,7 +33,7 @@ export default function Hero() {
 
                 </h1>
 
-                <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed fade-in-up font-light tracking-wide drop-shadow-lg">
+                <p className="text-base sm:text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-8 sm:mb-12 leading-relaxed fade-in-up font-light tracking-wide drop-shadow-lg px-2 sm:px-0">
                     We build scalable web applications, intelligent automation systems, and complete digital solutions—from development to marketing.
                 </p>
 
@@ -54,7 +54,7 @@ export default function Hero() {
                     </a>
 
                     {/* Secondary Button: Book a Call */}
-                    <a href="#contact" className="relative p-[1px] rounded-full overflow-hidden group w-full sm:w-auto hover:scale-105 transition-transform duration-300">
+                    <a href="https://cal.com/femurstudio/30min" target="_blank" rel="noopener noreferrer" className="relative p-[1px] rounded-full overflow-hidden group w-full sm:w-auto hover:scale-105 transition-transform duration-300">
                         {/* Rotating Border Beam */}
                         <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_70%,#22d3ee_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 

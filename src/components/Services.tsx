@@ -99,7 +99,7 @@ export default function Services() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[400px] bg-indigo-500/5 blur-[100px] rounded-full pointer-events-none" />
 
             <div className="max-w-[1400px] mx-auto px-6 mb-16 text-center relative z-10">
-                <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-4">Our Services</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white tracking-tight mb-4">Our Services</h2>
                 <p className="text-slate-400 max-w-2xl mx-auto">
                     Comprehensive digital solutions tailored to elevate your business.
                 </p>
@@ -114,7 +114,7 @@ export default function Services() {
                     {marqueeServices.map((service, index) => (
                         <div
                             key={`${service.title}-${index}`}
-                            className={`service-card flex-shrink-0 w-[360px] h-[420px] group relative bg-[#050505] rounded-[2rem] border border-white/[0.08] overflow-hidden cursor-pointer hover:border-white/20 transition-all duration-700`}
+                            className={`service-card flex-shrink-0 w-[280px] sm:w-[320px] md:w-[360px] h-[350px] sm:h-[380px] md:h-[420px] group relative bg-[#050505] rounded-[1.5rem] sm:rounded-[2rem] border border-white/[0.08] overflow-hidden cursor-pointer hover:border-white/20 transition-all duration-700`}
                         >
                             {/* Ambient Light - Soft radial glow from top center for studio vibe */}
                             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.03),transparent_70%)] pointer-events-none" />
@@ -124,14 +124,14 @@ export default function Services() {
                                 <img
                                     src={service.image}
                                     alt={service.title}
-                                    className="w-[200px] h-[200px] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] z-0"
+                                    className="w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] md:w-[200px] md:h-[200px] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] z-0"
                                 />
                             </div>
 
                             {/* Content - Bottom Left */}
-                            <div className="absolute bottom-0 left-0 w-full p-8 z-20">
-                                <h3 className="text-xl font-medium text-white mb-2 tracking-tight">{service.title}</h3>
-                                <p className="text-sm text-slate-500 font-medium tracking-wide">
+                            <div className="absolute bottom-0 left-0 w-full p-5 sm:p-6 md:p-8 z-20">
+                                <h3 className="text-lg sm:text-xl font-medium text-white mb-1 sm:mb-2 tracking-tight">{service.title}</h3>
+                                <p className="text-xs sm:text-sm text-slate-500 font-medium tracking-wide">
                                     {service.description}
                                 </p>
                             </div>
