@@ -1,7 +1,18 @@
 import { useState, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 
-export default function Navbar() {
+interface NavbarProps {
+    onNavigate?: (sectionIndex: number) => void;
+}
+
+// Section index mapping: Hero=0, Services=1, Projects=2, WhyUs=3, Testimonials=4, CTA=5, Footer=6
+const navLinkToSection: Record<string, number> = {
+    'Projects': 2,
+    'Services': 1,
+    'Contact': 6, // Footer section contains contact info
+};
+
+export default function Navbar({ onNavigate }: NavbarProps) {
     const navRef = useRef<HTMLElement>(null);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -9,6 +20,15 @@ export default function Navbar() {
 
     const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
     const closeMobileMenu = () => setMobileMenuOpen(false);
+
+    const handleNavClick = (item: string, e: React.MouseEvent) => {
+        e.preventDefault();
+        const sectionIndex = navLinkToSection[item];
+        if (onNavigate && sectionIndex !== undefined) {
+            onNavigate(sectionIndex);
+        }
+        closeMobileMenu();
+    };
 
     return (
         <>
@@ -28,6 +48,7 @@ export default function Navbar() {
                             <a
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
+                                onClick={(e) => handleNavClick(item, e)}
                                 className="relative px-4 py-2 text-sm font-medium text-slate-400 hover:text-white transition-all duration-300 rounded-full hover:bg-white/5 hover:shadow-[0_0_10px_rgba(255,255,255,0.1)]"
                             >
                                 {item}
@@ -36,7 +57,11 @@ export default function Navbar() {
                     </div>
 
                     <div className="flex items-center gap-3 sm:gap-4">
-                        <a href="#contact" className="relative p-[1px] rounded-full overflow-hidden group hidden md:inline-block hover:scale-105 transition-transform duration-300">
+                        <a
+                            href="#contact"
+                            onClick={(e) => handleNavClick('Contact', e)}
+                            className="relative p-[1px] rounded-full overflow-hidden group hidden md:inline-block hover:scale-105 transition-transform duration-300"
+                        >
                             {/* Rotating Beam */}
                             <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_70%,#22d3ee_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -85,7 +110,7 @@ export default function Navbar() {
                         <a
                             key={item}
                             href={`#${item.toLowerCase()}`}
-                            onClick={closeMobileMenu}
+                            onClick={(e) => handleNavClick(item, e)}
                             className="block px-4 py-3 text-lg font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200"
                         >
                             {item}
@@ -96,7 +121,7 @@ export default function Navbar() {
                 <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/5">
                     <a
                         href="#contact"
-                        onClick={closeMobileMenu}
+                        onClick={(e) => handleNavClick('Contact', e)}
                         className="block w-full py-4 text-center bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-xl hover:opacity-90 transition-opacity"
                     >
                         Get in Touch

@@ -126,7 +126,7 @@ function App() {
       style={{ perspective: '1000px' }} // Add 3D perspective
     >
       <ThreeBackground />
-      <Navbar />
+      <Navbar onNavigate={changeSection} />
 
       <NavigationDots
         totalSections={totalSections}

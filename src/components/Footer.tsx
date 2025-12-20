@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Twitter, Linkedin, Instagram, Mail, MapPin } from 'lucide-react';
+import { Twitter, Linkedin, Instagram, Facebook, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -19,10 +19,10 @@ const Footer = () => {
                             Engineering digital dominance. We build the systems that power the future.
                         </p>
                         <div className="flex gap-4">
-                            <SocialIcon href="https://linkedin.com" icon={<Linkedin className="w-4 h-4" />} />
-                            <SocialIcon href="https://instagram.com" icon={<Instagram className="w-4 h-4" />} />
-                            <SocialIcon href="https://twitter.com" icon={<Twitter className="w-4 h-4" />} />
-                            <SocialIcon href="https://github.com" icon={<Github className="w-4 h-4" />} />
+                            <SocialIcon href="https://www.linkedin.com/in/femur-studio-539095390/" icon={<Linkedin className="w-4 h-4" />} />
+                            <SocialIcon href="https://www.instagram.com/femurstudio/" icon={<Instagram className="w-4 h-4" />} />
+                            <SocialIcon href="https://x.com/femurstudio" icon={<Twitter className="w-4 h-4" />} />
+                            <SocialIcon href="https://www.facebook.com/profile.php?id=61583825392714" icon={<Facebook className="w-4 h-4" />} />
                         </div>
                     </div>
 
